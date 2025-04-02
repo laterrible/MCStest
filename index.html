@@ -1,1 +1,635 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCS Service Agreement - Section 1</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    .high-contrast * { background-color: #000 !important; color: #fff !important; border-color: #fff !important; }
+    .large-text { font-size: 1.25rem; }
+    .dyslexia-font { font-family: 'OpenDyslexic', Arial, sans-serif; }
+    .accessibility-panel { position: fixed; bottom: 20px; right: 20px; z-index: 50; }
+  </style>
+</head>
+<body class="bg-gray-100 text-black p-6" id="mainBody">
+<div class="accessibility-panel space-x-2">
+  <button onclick="toggleFontSize()" class="bg-blue-600 text-white px-3 py-1 rounded">A+</button>
+  <button onclick="toggleDyslexiaFont()" class="bg-yellow-400 text-black px-3 py-1 rounded">Dyslexia</button>
+  <button onclick="toggleHighContrast()" class="bg-black text-white px-3 py-1 rounded">Contrast</button>
+</div>
+
+<div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-xl" id="formContainer">
+  <div class="sticky top-0 z-40 bg-white pt-4 pb-2">
+    <div class="h-2 bg-gray-200 rounded-full mb-2">
+      <div id="progress-bar" class="h-2 bg-blue-500 rounded-full" style="width: 0%;"></div>
+    </div>
+    <div class="text-right text-sm text-gray-600">Section 1 of 6</div>
+  </div>
+
+  <h1 class="text-2xl font-bold mb-4">MCS Participant Pack - Service Agreement 2025</h1>
+  <p class="mb-4">This NDIS Participant Service Agreement is:</p>
+  <p class="mb-4"><strong>BETWEEN</strong><br>Modern Community Solutions Armidale Ltd (ABN 65 675 374 035)</p>
+  <p class="mb-4"><strong>AND</strong><br>The Participant (as identified in this form).</p>
+  <p class="mb-4">Please use this form to begin your Service Agreement with Modern Community Solutions Armidale Ltd (MCS). The email you provide will be used to send a completed version of this document to you.</p>
+
+  <p class="mb-4">If you have any questions, contact <a href="mailto:hello@mcsarmidale.com.au" class="text-blue-600">hello@mcsarmidale.com.au</a>.</p>
+  <p class="mb-6">MCS endorses the <a href="https://www.dana.org.au/" class="text-blue-600 underline" target="_blank">Disability Advocacy Network Australia (DANA)</a> for support and information.</p>
+
+  <form id="startForm" onsubmit="event.preventDefault(); alert('Proceed to Section 2');">
+    <div class="mb-4">
+      <label class="block font-semibold mb-1">Your Email Address *</label>
+      <input type="email" class="w-full p-2 border rounded" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+    </div>
+    <div class="mb-4">
+      <label class="block font-semibold mb-1">Today's Date *</label>
+      <input type="date" class="w-full p-2 border rounded" required>
+    </div>
+    <div class="mb-6 mt-6">
+      <button type="submit" class="w-full py-3 bg-green-600 text-white text-lg rounded font-semibold">Start My Agreement</button>
+    </div>
+    <div class="text-center text-gray-400 italic">Updating an agreement feature coming soon.</div>
+  </form>
+</div>
+
+<script>
+function toggleFontSize() {
+  document.body.classList.toggle('large-text');
+}
+function toggleDyslexiaFont() {
+  document.body.classList.toggle('dyslexia-font');
+}
+function toggleHighContrast() {
+  document.body.classList.toggle('high-contrast');
+  
+document.getElementById('formContainer').classList.toggle('high-contrast');
+document.querySelectorAll('input, textarea, select, label').forEach(el => {
+  el.classList.toggle('high-contrast');
+});
+
+}
+</script>
+</body>
+</html>
+
+
+<div class="accessibility-panel space-x-2">
+  <button onclick="toggleFontSize()" class="bg-blue-600 text-white px-3 py-1 rounded">A+</button>
+  <button onclick="toggleDyslexiaFont()" class="bg-yellow-400 text-black px-3 py-1 rounded">Dyslexia</button>
+  <button onclick="toggleHighContrast()" class="bg-black text-white px-3 py-1 rounded">Contrast</button>
+</div>
+
+<div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-xl" id="formContainer">
+  <div class="sticky top-0 z-40 bg-white pt-4 pb-2">
+    <div class="h-2 bg-gray-200 rounded-full mb-2">
+      <div id="progress-bar" class="h-2 bg-blue-500 rounded-full" style="width: 16%;"></div>
+    </div>
+    <div class="text-right text-sm text-gray-600">Section 2 of 6</div>
+  </div>
+
+  <h1 class="text-2xl font-bold mb-4">Section 2: Participant Details</h1>
+
+  <form onsubmit="event.preventDefault(); alert('Proceed to Section 3');">
+    <div class="mb-4">
+      <label class="block font-semibold">First Name *</label>
+      <input type="text" name="firstName" class="w-full p-2 border rounded" required>
+    </div>
+
+    <div class="mb-4">
+      <label class="block font-semibold">Surname *</label>
+      <input type="text" name="surname" class="w-full p-2 border rounded" required>
+    </div>
+
+    <div class="mb-4">
+      <label class="block font-semibold">Date of Birth *</label>
+      <input type="date" name="dob" class="w-full p-2 border rounded" required>
+    </div>
+
+    <div class="mb-4">
+      <label class="block font-semibold">Participant Address *</label>
+      <input type="text" id="autocomplete" name="address" class="w-full p-2 border rounded" required>
+    </div>
+
+    <div class="mb-4">
+      <label class="block font-semibold">Participant Representative (if applicable)</label>
+      <input type="text" name="representative" class="w-full p-2 border rounded">
+    </div>
+
+    <div class="mb-6">
+      <label class="block font-semibold">Tell us a bit about you</label>
+      <textarea name="aboutYou" class="w-full p-2 border rounded mt-1" rows="4" placeholder="Include your favourite part of the day, activities you wish were easier, how you'll let us know if you need help, or something new you'd like to try."></textarea>
+    </div>
+
+    <div class="mb-6">
+      <label class="block font-semibold mb-2">NDIS Impairment Categories (tick all that apply)</label>
+      <label><input type="checkbox" name="impairments" value="Intellectual"> Intellectual</label><br/>
+      <label><input type="checkbox" name="impairments" value="Cognitive"> Cognitive</label><br/>
+      <label><input type="checkbox" name="impairments" value="Sensory"> Sensory</label><br/>
+      <label><input type="checkbox" name="impairments" value="Neurological"> Neurological</label><br/>
+      <label><input type="checkbox" name="impairments" value="Physical"> Physical</label><br/>
+      <label><input type="checkbox" name="impairments" value="Psychosocial"> Psychosocial disability</label>
+    </div>
+
+    <div class="mb-6">
+      <label class="block font-semibold">Extra information that helps us support you</label>
+      <textarea name="additionalSupportInfo" class="w-full p-2 border rounded mt-1" rows="4" placeholder="Values, beliefs, medical or behavioural needs, likes/dislikes, or additional context..."></textarea>
+    </div>
+
+    
+    <div class="mb-6">
+      <label class="block font-semibold">NDIS Number *</label>
+      <input type="text" name="ndisNumber" class="w-full p-2 border rounded" required>
+    </div>
+
+    <div class="mb-6">
+      <label class="block font-semibold">Plan Start Date *</label>
+      <input type="date" name="planStart" class="w-full p-2 border rounded" required>
+    </div>
+
+    <div class="mb-6">
+      <label class="block font-semibold">Plan End Date *</label>
+      <input type="date" name="planEnd" class="w-full p-2 border rounded" required>
+    </div>
+
+    <div class="mb-6">
+      <label class="block font-semibold mb-2">Is your NDIS plan NDIA managed?</label>
+      <label><input type="radio" name="ndiaManaged" value="yes" onclick="toggleNDIA(true)"> Yes</label><br>
+      <label><input type="radio" name="ndiaManaged" value="no" onclick="toggleNDIA(false)"> No</label>
+    </div>
+
+    <div id="ndiaYesMsg" class="hidden mb-4">
+      <p class="text-green-700 text-lg">😊 Great! We'll proceed to the next section.</p>
+    </div>
+
+    <div id="ndiaNoFields" class="hidden mb-6">
+      <h3 class="font-semibold mb-2">Plan Manager Details</h3>
+      <input type="text" name="planManagerName" class="w-full p-2 border rounded mb-2" placeholder="Name">
+      <input type="email" name="planManagerEmail" class="w-full p-2 border rounded mb-2" placeholder="Email">
+      <input type="tel" name="planManagerPhone" class="w-full p-2 border rounded mb-4" placeholder="Phone Number (10 digits)">
+
+      <h3 class="font-semibold mb-2">Support Coordinator Details</h3>
+      <input type="text" name="scName" class="w-full p-2 border rounded mb-2" placeholder="Name">
+      <input type="email" name="scEmail" class="w-full p-2 border rounded mb-2" placeholder="Email">
+      <input type="tel" name="scPhone" class="w-full p-2 border rounded" placeholder="Phone Number (10 digits)">
+    </div>
+<div class="flex justify-between mt-6">
+      <button type="button" onclick="history.back()" class="bg-gray-400 text-white py-2 px-6 rounded">Back</button>
+      <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded">Next</button>
+    </div>
+  </form>
+</div>
+
+
+<script>
+function toggleNDIA(isYes) {
+  const yesMsg = document.getElementById('ndiaYesMsg');
+  const noFields = document.getElementById('ndiaNoFields');
+
+  if (isYes) {
+    yesMsg.classList.remove('hidden');
+    noFields.classList.add('hidden');
+  } else {
+    yesMsg.classList.add('hidden');
+    noFields.classList.remove('hidden');
+  }
+}
+</script>
+
+
+<div class="accessibility-panel space-x-2">
+  <button onclick="toggleFontSize()" class="bg-blue-600 text-white px-3 py-1 rounded">A+</button>
+  <button onclick="toggleDyslexiaFont()" class="bg-yellow-400 text-black px-3 py-1 rounded">Dyslexia</button>
+  <button onclick="toggleHighContrast()" class="bg-black text-white px-3 py-1 rounded">Contrast</button>
+</div>
+
+<div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-xl" id="formContainer">
+  <div class="sticky top-0 z-40 bg-white pt-4 pb-2">
+    <div class="h-2 bg-gray-200 rounded-full mb-2">
+      <div id="progress-bar" class="h-2 bg-blue-500 rounded-full" style="width: 32%;"></div>
+    </div>
+    <div class="text-right text-sm text-gray-600">Section 3 of 6</div>
+  </div>
+
+  <h1 class="text-2xl font-bold mb-4">Section 3: Emergency Contact & Allergies</h1>
+
+  <form onsubmit="event.preventDefault(); alert('Proceed to Section 4');">
+    <!-- A. Emergency Contact -->
+    <div class="mb-6">
+      <label class="block font-semibold mb-2">Emergency Contact Name</label>
+      <input type="text" class="w-full p-2 border rounded" required />
+      <label class="block font-semibold mt-4 mb-2">Emergency Contact Number</label>
+      <input type="tel" class="w-full p-2 border rounded" maxlength="10" pattern="^0[0-9]{9}$" placeholder="Must be 10 digits" required />
+    </div>
+
+    <!-- B. Medical Sharing -->
+    <div class="mb-6">
+      <label class="block font-semibold mb-2">Would you like to share any allergy or medical details that are important for us to safely support you?</label>
+      <label><input type="radio" name="shareMedical" value="yes" onclick="toggleMedical(true)"> Yes</label><br/>
+      <label><input type="radio" name="shareMedical" value="no" onclick="toggleMedical(false)"> No</label>
+    </div>
+
+    <div id="medicalDetails" class="hidden">
+      <label class="block font-semibold mb-2">Please tick any that apply:</label>
+      <label><input type="checkbox" name="medical" value="Asthma" onchange="toggleDetails()"> Asthma</label><br/>
+      <label><input type="checkbox" name="medical" value="Anaphylaxis" onchange="toggleDetails()"> Anaphylaxis</label><br/>
+      <label><input type="checkbox" name="medical" value="Epilepsy" onchange="toggleDetails()"> Epilepsy</label><br/>
+      <label><input type="checkbox" name="medical" value="Other" onchange="toggleDetails()"> Other</label>
+
+      <div class="mt-4 hidden" id="medicalExtraInfo">
+        <label class="block font-semibold mb-1">Please provide any additional medical information:</label>
+        <textarea class="w-full p-2 border rounded" placeholder="Describe your support needs here..."></textarea>
+      </div>
+    </div>
+
+    <div class="flex justify-between mt-6">
+      <button type="button" onclick="history.back()" class="bg-gray-400 text-white py-2 px-6 rounded">Back</button>
+      <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded">Next</button>
+    </div>
+  </form>
+</div>
+
+<script>
+function toggleFontSize() {
+  document.body.classList.toggle('large-text');
+}
+function toggleDyslexiaFont() {
+  document.body.classList.toggle('dyslexia-font');
+}
+function toggleHighContrast() {
+  document.body.classList.toggle('high-contrast');
+  
+document.getElementById('formContainer').classList.toggle('high-contrast');
+document.querySelectorAll('input, textarea, select, label').forEach(el => {
+  el.classList.toggle('high-contrast');
+});
+
+}
+function toggleMedical(show) {
+  document.getElementById('medicalDetails').classList.toggle('hidden', !show);
+  document.getElementById('medicalExtraInfo').classList.add('hidden');
+}
+function toggleDetails() {
+  const selected = document.querySelectorAll('#medicalDetails input[type="checkbox"]:checked');
+  document.getElementById('medicalExtraInfo').classList.toggle('hidden', selected.length === 0);
+}
+</script>
+
+
+<div class="accessibility-panel space-x-2">
+  <button onclick="toggleFontSize()" class="bg-blue-600 text-white px-3 py-1 rounded">A+</button>
+  <button onclick="toggleDyslexiaFont()" class="bg-yellow-400 text-black px-3 py-1 rounded">Dyslexia</button>
+  <button onclick="toggleHighContrast()" class="bg-black text-white px-3 py-1 rounded">Contrast</button>
+</div>
+
+<div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-xl" id="formContainer">
+  <div class="sticky top-0 z-40 bg-white pt-4 pb-2">
+    <div class="h-2 bg-gray-200 rounded-full mb-2">
+      <div id="progress-bar" class="h-2 bg-blue-500 rounded-full" style="width: 48%;"></div>
+    </div>
+    <div class="text-right text-sm text-gray-600">Section 4 of 6</div>
+  </div>
+
+  <h1 class="text-2xl font-bold mb-4">Section 4: MCS Consent & Policies</h1>
+
+  <form onsubmit="event.preventDefault(); alert('Proceed to Section 5');">
+    <p class="mb-4">If you’re 18 or older, you have the right to make decisions about your business with the NDIS. That’s why we need a record of your consent before we share your information with anyone else or let someone else do things for you. You can take away your consent at any time. Let us know by mail, email, in person or over the phone.</p>
+
+    <p class="mb-4">Information that we may disclose includes your name, address, phone number, date of birth, NDIS number, NDIS participant status and relevant shift notes.</p>
+
+    <p class="mb-4">MCS securely stores your information in line with the Privacy Act 1988 and NDIS Information Rules. We may share information with family, other providers, or allied health services where it improves your support. You may request access to or deletion of your stored information.</p>
+
+    <p class="mb-4">As part of our commitment to continuous improvement, MCS conducts regular audits and surveys. You will be informed ahead of time. You are automatically enrolled unless you opt out below.</p>
+
+    <div class="mb-4">
+      <label class="block font-semibold mb-2">Please tick all that apply:</label>
+      <label><input type="checkbox" name="consentInfo" value="yes" /> I consent to sharing relevant information with MCS and support agencies as needed</label><br/>
+      <label><input type="checkbox" name="consentInfo" value="no" /> I do NOT consent to information sharing</label><br/>
+      <label><input type="checkbox" name="auditOptOut" /> I OPT OUT of MCS audits and surveys</label>
+    </div>
+
+    <hr class="my-6">
+
+    <p class="mb-4 font-semibold">I have read and understood the <a href="#" onclick="openModal()" class="text-blue-600 underline">MCS feedback and complaints process</a>:</p>
+
+    <label><input type="checkbox" id="acknowledgeBox" /> I agree to the MCS feedback and complaints process</label>
+
+    <div class="flex justify-between mt-6">
+      <button type="button" onclick="history.back()" class="bg-gray-400 text-white py-2 px-6 rounded">Back</button>
+      <button type="submit" id="nextButton" class="bg-blue-600 text-white py-2 px-6 rounded opacity-50 cursor-not-allowed" disabled>Next</button>
+    </div>
+  </form>
+</div>
+
+<!-- Modal -->
+<div id="complaintModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white p-6 max-w-2xl rounded-lg shadow-lg overflow-y-auto max-h-[90vh]">
+    <h2 class="text-xl font-bold mb-4">MCS Feedback and Complaints Process</h2>
+    <p class="text-sm whitespace-pre-line mb-4">
+Participants can provide feedback or make complaints through various channels (e.g., directly to staff, via email, through surveys).
+MCS may be contacted at:
+Email: hello@mcsarmidale.com.au
+Phone: 0491 716 968
+Address: 31 Chestnut Avenue, Armidale, NSW 2350
+
+Acknowledging and Documenting:
+Complaints will be acknowledged within two working days.
+All complaints will be documented, and the participant will be informed that their complaint has been received and is being investigated.
+
+Investigation:
+Complaints will be thoroughly investigated to understand the root cause and potential resolutions.
+
+Resolution:
+MCS aims to resolve complaints within 15 business days.
+
+Escalation:
+NDIS Quality and Safeguards Commission
+Phone: 1800 035 544
+Website: www.ndiscommission.gov.au
+    </p>
+    <div class="text-right">
+      <button onclick="closeModal()" class="bg-blue-600 text-white w-full mt-4 py-3 text-lg font-semibold rounded">Close this window</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleFontSize() {
+  document.body.classList.toggle('large-text');
+}
+function toggleDyslexiaFont() {
+  document.body.classList.toggle('dyslexia-font');
+}
+function toggleHighContrast() {
+  document.body.classList.toggle('high-contrast');
+  
+document.getElementById('formContainer').classList.toggle('high-contrast');
+document.querySelectorAll('input, textarea, select, label').forEach(el => {
+  el.classList.toggle('high-contrast');
+});
+
+}
+function openModal() {
+  document.getElementById('complaintModal').classList.remove('hidden');
+}
+function closeModal() {
+  document.getElementById('complaintModal').classList.add('hidden');
+}
+document.getElementById('acknowledgeBox').addEventListener('change', function() {
+  const nextBtn = document.getElementById('nextButton');
+  if (this.checked) {
+    nextBtn.disabled = false;
+    nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+  } else {
+    nextBtn.disabled = true;
+    nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+  }
+});
+</script>
+
+<div class="accessibility-panel space-x-2">
+  <button onclick="toggleFontSize()" class="bg-blue-600 text-white px-3 py-1 rounded">A+</button>
+  <button onclick="toggleDyslexiaFont()" class="bg-yellow-400 text-black px-3 py-1 rounded">Dyslexia</button>
+  <button onclick="toggleHighContrast()" class="bg-black text-white px-3 py-1 rounded">Contrast</button>
+</div>
+
+<div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-xl" id="formContainer">
+  <div class="sticky top-0 z-40 bg-white pt-4 pb-2">
+    <div class="h-2 bg-gray-200 rounded-full mb-2">
+      <div id="progress-bar" class="h-2 bg-blue-500 rounded-full" style="width: 64%;"></div>
+    </div>
+    <div class="text-right text-sm text-gray-600">Section 5 of 6</div>
+  </div>
+
+  <h1 class="text-2xl font-bold mb-4">Section 5: Requested Support</h1>
+
+  <form onsubmit="event.preventDefault(); alert('Proceed to Section 6');">
+    <p class="mb-4">Please select the services you would like to receive. For each service selected, please include your preferred times/days.</p>
+
+    <div class="mb-4">
+      <p class="font-semibold mb-2">Assistance with Daily Personal Activities</p>
+      <label><input type="checkbox" onchange="toggleTextbox('dailyWeekdayBox')"> Weekday 
+        <button type="button" onclick="showRateInfo('Billed as 01_11_0107_1_1 — $67.56/hr (2hr min). Subject to Short Notice Cancellation Policy.')" class="ml-2 text-blue-600 font-bold">?</button></label>
+      <div id="dailyWeekdayBox" class="hidden mt-2"><textarea class="w-full p-2 border rounded" placeholder="Preferred weekday times/days..."></textarea></div>
+
+      <label><input type="checkbox" onchange="toggleTextbox('dailySaturdayBox')"> Saturday 
+        <button type="button" onclick="showRateInfo('Billed as 01_13_0107_1_1 — $95.07/hr (2hr min). Subject to Short Notice Cancellation Policy.')" class="ml-2 text-blue-600 font-bold">?</button></label>
+      <div id="dailySaturdayBox" class="hidden mt-2"><textarea class="w-full p-2 border rounded" placeholder="Preferred Saturday times/days..."></textarea></div>
+
+      <label><input type="checkbox" onchange="toggleTextbox('dailySundayBox')"> Sunday 
+        <button type="button" onclick="showRateInfo('Billed as 01_14_0107_1_1 — $122.59/hr (2hr min). Subject to Short Notice Cancellation Policy.')" class="ml-2 text-blue-600 font-bold">?</button></label>
+      <div id="dailySundayBox" class="hidden mt-2"><textarea class="w-full p-2 border rounded" placeholder="Preferred Sunday times/days..."></textarea></div>
+
+      <label><input type="checkbox" onchange="toggleTextbox('dailyEveningBox')"> Weekday Evening 
+        <button type="button" onclick="showRateInfo('Billed as 01_15_0107_1_1 — $74.44/hr (2hr min). Subject to Short Notice Cancellation Policy.')" class="ml-2 text-blue-600 font-bold">?</button></label>
+      <div id="dailyEveningBox" class="hidden mt-2"><textarea class="w-full p-2 border rounded" placeholder="Preferred evening times/days..."></textarea></div>
+
+      <label><input type="checkbox" onchange="toggleTextbox('dailyHolidayBox')"> Public Holidays 
+        <button type="button" onclick="showRateInfo('Billed as 01_12_0107_1_1 — $150.10/hr (2hr min). Subject to Short Notice Cancellation Policy.')" class="ml-2 text-blue-600 font-bold">?</button></label>
+      <div id="dailyHolidayBox" class="hidden mt-2"><textarea class="w-full p-2 border rounded" placeholder="Preferred public holiday times/days..."></textarea></div>
+    </div>
+
+    <div class="mb-4">
+      <label><input type="checkbox" onchange="toggleTextbox('travelBox')"> Assistance with Travel</label>
+      <div id="travelBox" class="hidden mt-2"><textarea class="w-full p-2 border rounded" placeholder="Preferred travel times..."></textarea></div>
+    </div>
+
+    <div class="mb-4">
+      <label><input type="checkbox" onchange="toggleTextbox('lifeSkillsBox')"> Development of Daily Living and Life Skills</label>
+      <div id="lifeSkillsBox" class="hidden mt-2"><textarea class="w-full p-2 border rounded" placeholder="Preferred life skills support times..."></textarea></div>
+    </div>
+
+    <div class="mb-4">
+      <label><input type="checkbox" onchange="toggleTextbox('householdBox')"> Household Tasks</label>
+      <div id="householdBox" class="hidden mt-2"><textarea class="w-full p-2 border rounded" placeholder="Preferred household support times..."></textarea></div>
+    </div>
+
+    <div class="mb-4">
+      <label><input type="checkbox" onchange="toggleTextbox('communityBox')"> Participation in Community, Social and Civic Activities 
+        <button type="button" onclick="showRateInfo('Billed as 01_12_0107_1_1 — $67.56/hr (2hr min). Subject to Short Notice Cancellation Policy.')" class="ml-2 text-blue-600 font-bold">?</button></label>
+      <div id="communityBox" class="hidden mt-2"><textarea class="w-full p-2 border rounded" placeholder="Preferred participation times..."></textarea></div>
+    </div>
+
+    <div class="mb-4">
+      <label><input type="checkbox" onchange="toggleTextbox('otherBox')"> Other</label>
+      <div id="otherBox" class="hidden mt-2"><textarea class="w-full p-2 border rounded" placeholder="Describe the support and preferred times..."></textarea></div>
+    </div>
+
+    <div class="flex justify-between mt-6">
+      <button type="button" onclick="history.back()" class="bg-gray-400 text-white py-2 px-6 rounded">Back</button>
+      <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded">Next</button>
+    </div>
+  </form>
+</div>
+
+<script>
+function toggleFontSize() {
+  document.body.classList.toggle('large-text');
+}
+function toggleDyslexiaFont() {
+  document.body.classList.toggle('dyslexia-font');
+}
+function toggleHighContrast() {
+  document.body.classList.toggle('high-contrast');
+  
+document.getElementById('formContainer').classList.toggle('high-contrast');
+document.querySelectorAll('input, textarea, select, label').forEach(el => {
+  el.classList.toggle('high-contrast');
+});
+
+}
+function toggleTextbox(id) {
+  document.getElementById(id).classList.toggle('hidden');
+}
+function showRateInfo(text) {
+  alert(text);
+}
+</script>
+
+
+<div class="accessibility-panel space-x-2">
+  <button onclick="toggleFontSize()" class="bg-blue-600 text-white px-3 py-1 rounded">A+</button>
+  <button onclick="toggleDyslexiaFont()" class="bg-yellow-400 text-black px-3 py-1 rounded">Dyslexia</button>
+  <button onclick="toggleHighContrast()" class="bg-black text-white px-3 py-1 rounded">Contrast</button>
+</div>
+
+<div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-xl" id="formContainer">
+  <div class="sticky top-0 z-40 bg-white pt-4 pb-2">
+    <div class="h-2 bg-gray-200 rounded-full mb-2">
+      <div id="progress-bar" class="h-2 bg-blue-500 rounded-full" style="width: 100%;"></div>
+    </div>
+    <div class="text-right text-sm text-gray-600">Section 6 of 6</div>
+  </div>
+
+  <h1 class="text-2xl font-bold mb-4">Section 6: Signature & Final Declaration</h1>
+
+  <form id="signatureForm" onsubmit="event.preventDefault(); alert('Your agreement has been submitted!');">
+    <div class="mb-4">
+      <label class="block font-semibold mb-2">Please sign in the box below *</label>
+      <canvas id="signature-pad" class="border w-full h-40 rounded"></canvas>
+      <input type="hidden" name="signature" id="signature-data">
+      <button type="button" onclick="clearSignature()" class="mt-2 px-4 py-1 bg-gray-200 text-sm rounded">Clear Signature</button>
+    </div>
+
+    <div class="mb-4">
+      <label class="block font-semibold mb-1">Today's Date *</label>
+      <input type="date" name="signatureDate" class="w-full p-2 border rounded" required>
+    </div>
+
+    <div class="mb-4">
+      <label class="block font-semibold mb-1">Who is completing this form? *</label>
+      <label><input type="radio" name="completedBy" value="participant" required> The Participant</label><br/>
+      <label><input type="radio" name="completedBy" value="representative" required> A representative on behalf of the participant</label>
+    </div>
+
+    
+<div id="representativeFields" class="hidden">
+  <label class="block font-semibold mb-1">Representative Name</label>
+  <input type="text" name="repName" class="w-full p-2 border rounded mb-2">
+  <label class="block font-semibold mb-1">Representative Phone Number</label>
+  <input type="tel" name="repPhone" class="w-full p-2 border rounded mb-2">
+  <label class="block font-semibold mb-1">Representative Email</label>
+  <input type="email" name="repEmail" class="w-full p-2 border rounded mb-2">
+  <label class="block font-semibold mb-1">Relationship to Participant</label>
+  <input type="text" name="repRelationship" class="w-full p-2 border rounded mb-2">
+  <label class="block"><input type="checkbox" name="repConsent" required> I declare that I have consent to act on behalf of the participant</label>
+</div>
+
+    <div class="flex justify-between mt-6">
+      <button type="button" onclick="history.back()" class="bg-gray-400 text-white py-2 px-6 rounded">Back</button>
+      <button type="submit" class="bg-green-600 text-white py-2 px-6 rounded font-semibold">Submit My Agreement</button>
+    </div>
+  </form>
+</div>
+
+<script>
+function toggleFontSize() {
+  document.body.classList.toggle('large-text');
+}
+function toggleDyslexiaFont() {
+  document.body.classList.toggle('dyslexia-font');
+}
+function toggleHighContrast() {
+  document.body.classList.toggle('high-contrast');
+  
+document.getElementById('formContainer').classList.toggle('high-contrast');
+document.querySelectorAll('input, textarea, select, label').forEach(el => {
+  el.classList.toggle('high-contrast');
+});
+
+}
+
+const canvas = document.getElementById('signature-pad');
+const signaturePad = new SignaturePad(canvas);
+function clearSignature() {
+  signaturePad.clear();
+  document.getElementById('signature-data').value = '';
+}
+
+document.getElementById('signatureForm').addEventListener('submit', function() {
+  if (!signaturePad.isEmpty()) {
+    document.getElementById('signature-data').value = signaturePad.toDataURL();
+  }
+});
+
+
+  r.addEventListener('change', function () {
+    document.getElementById('representativeFields').classList.toggle('hidden', this.value !== 'representative');
+  });
+});
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.6/dist/signature_pad.umd.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const canvas = document.getElementById('signature-pad');
+  if (canvas) {
+    const signaturePad = new SignaturePad(canvas);
+    const form = document.getElementById('signatureForm');
+    if (form) {
+      form.addEventListener('submit', function () {
+        if (!signaturePad.isEmpty()) {
+          document.getElementById('signature-data').value = signaturePad.toDataURL();
+        }
+      });
+    }
+    const clearBtn = document.querySelector('[onclick="clearSignature()"]');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => signaturePad.clear());
+    }
+  }
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const canvas = document.getElementById('signature-pad');
+  if (canvas) {
+    const signaturePad = new SignaturePad(canvas);
+    const form = document.getElementById('signatureForm');
+    if (form) {
+      form.addEventListener('submit', function () {
+        if (!signaturePad.isEmpty()) {
+          document.getElementById('signature-data').value = signaturePad.toDataURL();
+        }
+      });
+    }
+    const clearBtn = document.querySelector('[onclick="clearSignature()"]');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => signaturePad.clear());
+    }
+  }
+
+  document.querySelectorAll('input[name="completedBy"]').forEach(r => {
+    r.addEventListener('change', function () {
+      const repFields = document.getElementById('representativeFields');
+      const repExtras = document.getElementById('representativeExtraFields');
+      const isRep = this.value === 'representative';
+      if (repFields) repFields.classList.toggle('hidden', !isRep);
+      if (repExtras) repExtras.classList.toggle('hidden', !isRep);
+    });
+  });
+});
+</script>
+</body></html>
