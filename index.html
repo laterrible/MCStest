@@ -2,21 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3P6_VGrGfQ60Q31k78h5-YAtbPkzhUMk&libraries=places"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
-<script>
-function initAutocomplete() {
-  const input = document.getElementById('autocomplete');
-  if (input) {
-    new google.maps.places.Autocomplete(input, {
-      types: ['address'],
-      componentRestrictions: { country: 'au' }
-    });
-  }
-}
-window.onload = initAutocomplete;
-</script>
   <title>MCS Service Agreement - Section 1</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
@@ -673,5 +661,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+</script>
+<script>
+function initAutocomplete() {
+  const input = document.getElementById('autocomplete');
+  if (input) {
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+      types: ['address'],
+      componentRestrictions: { country: 'au' }  // Only allow AU addresses
+    });
+  }
+}
+
+window.onload = initAutocomplete;
 </script>
 </body></html>
