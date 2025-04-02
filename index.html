@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3P6_VGrGfQ60Q31k78h5-YAtbPkzhUMk&libraries=places"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MCS Service Agreement - Section 1</title>
@@ -13,6 +12,22 @@
     .dyslexia-font { font-family: 'OpenDyslexic', Arial, sans-serif; }
     .accessibility-panel { position: fixed; bottom: 20px; right: 20px; z-index: 50; }
   </style>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3P6_VGrGfQ60Q31k78h5-YAtbPkzhUMk&libraries=places"></script>
+<script>
+function initAutocomplete() {
+  const inputs = document.querySelectorAll('input[id*="autocomplete"], input[name*="address"]');
+  inputs.forEach(input => {
+    if (input) {
+      const autocomplete = new google.maps.places.Autocomplete(input, {
+        types: ['address'],
+        componentRestrictions: { country: 'au' }
+      });
+    }
+  });
+}
+window.onload = initAutocomplete;
+</script>
 </head>
 <body class="bg-gray-100 text-black p-6" id="mainBody">
 <div class="accessibility-panel space-x-2">
@@ -633,16 +648,17 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("agreementForm");
+  const form = document.getElementById("signatureForm");
+  if (!form) return;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const formData = new FormData(form);
     const data = new URLSearchParams();
-
     for (const pair of formData.entries()) {
       data.append(pair[0], pair[1]);
     }
@@ -653,26 +669,13 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(response => response.text())
     .then(text => {
-      alert("✅ Your agreement was submitted successfully!");
+      alert("✅ Your agreement has been submitted successfully!");
       form.reset();
     })
     .catch(error => {
-      alert("❌ Something went wrong: " + error.message);
+      alert("❌ Submission failed: " + error.message);
     });
   });
 });
-</script>
-<script>
-function initAutocomplete() {
-  const input = document.getElementById('autocomplete');
-  if (input) {
-    const autocomplete = new google.maps.places.Autocomplete(input, {
-      types: ['address'],
-      componentRestrictions: { country: 'au' }  // Only allow AU addresses
-    });
-  }
-}
-
-window.onload = initAutocomplete;
 </script>
 </body></html>
